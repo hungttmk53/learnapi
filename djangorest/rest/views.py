@@ -3,8 +3,8 @@ from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
 )
-from rest_framwork import viewsets
-from rest_framwork.pagination import PageNumberPagination
+from rest_framework import viewsets
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import serializers
 from .models import Post
