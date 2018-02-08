@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from django.contrib import admin
+from rest_framework import routers
+from rest.views import PostListCreateAPIView, PostDetailUpdateAPIView
+
+router = routers.SimpleRouter()
+router.register(r'posts', PostListCreateAPIView, base_name="Posts")
+router.register(r'posts', PostDetailUpdateAPIView, base_name="Posts")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+#    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url('^api/', include(router.urls))
 ]
